@@ -13,4 +13,3 @@ const results1 = takeUntil(array, x => x === '?');
 console.log(results1);
 
 console.log("---");
-
