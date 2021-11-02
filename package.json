@@ -1,7 +1,7 @@
 {
   "name": "lotide",
   "version": "1.0.0",
-  "description": "This is Lotide",
+  "description": "This is Lotide for Lighthouse Labs",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
