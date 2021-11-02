@@ -4,8 +4,14 @@ const assertEqual = require('./assertEqual');
 
 const head = function(first, second) {
   first = first[0];
+  console.log(first);
   return first;
 }
+assertEqual(head([1,5,6,7]),1);
+
+
+
+//assertEqual(head([1,5,6,7], 1))
 
 // TEST CODE
 // console.log(assertEqual(head([5,6,7]), 5));

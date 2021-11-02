@@ -1,8 +1,12 @@
-const tail = require('../tail.js');
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
+const tail   = require('../tail');
 
-//TEST CODE
-(assertEqual(tail([5,6,7]),5));
-(assertEqual(tail(["Yo Yo", "Lighthouse", "Labs"]),"Labs"));
-(assertEqual(tail(["Tania", "Adele", "Ellie", "Daisy"]),"Daisy"));
-(assertEqual(tail(["carlito"]), "carlito"));
+describe("#tail", () => {
+  it("returns 3 for [1, 2, 3]", () => {
+    assert.strictEqual(tail([1, 2, 3]), 3);
+  });
+});
+
+it("returns '5' for ['5']", () => {
+  assert.strictEqual(tail(['5']), '5'); 
+});

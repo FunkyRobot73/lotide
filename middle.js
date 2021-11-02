@@ -18,20 +18,22 @@ const assertArraysEqual = function(array1, array2) {
 
 const middle = function(arrayMiddle) {
   let arrayM = [];
-  if(arrayMiddle.length <= 2) {
+  if(arrayMiddle.length <= 1) {
     //console.log(arrayM); 
-  return arrayM;
+    let arrayN = arrayMiddle[0]
+    let n = arrayN.toString();
+    return n
 }
   if(arrayMiddle.length % 2 === 1) {
     arrayM.push(arrayMiddle[(arrayMiddle.length -1) / 2])
     //console.log(arrayM);
-    return arrayM;
+    return arrayM[0];
   }
   if(arrayMiddle.length % 2 === 0) {
     arrayM.push(arrayMiddle[(arrayMiddle.length) / 2 -1])
     arrayM.push(arrayMiddle[(arrayMiddle.length) / 2])
     //console.log(arrayM);
-    return arrayM;
+    return arrayM[0];
     
 };
 
