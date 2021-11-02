@@ -1,22 +1,33 @@
 const eqArrays = function(array1, array2) {
-sameLength = true;
-  if(array1.length === array2.length) {
-    console.log(`\nBoth Arrays are of equal length. (AKA :${sameLength})`)
-  } else {
-    sameLength = false;
-    console.log(`\nThese Arrays [${array1}] & [${array2}] are different sizes. (AKA:${sameLength})`)
-}
-  if(sameLength) {
-  for(x = 0 ; x < array1.length ; x++) {
-    console.log(`Does ${array1[x]} === ${array2[x]}❔❔❔`);
-    if(array1[x] !== array2[x]) {
-      sameLength = false;
-      console.log(`🚩🚩🚩Unfortunately this #${array1[x]} Doesn't match this #${array2[x]}!!! (AKA: ${sameLength})`);
-      
-    }
-    if(sameLength) console.log(`😁Looks like we've got a matching pair!`);
-    }
-    if(sameLength) console.log(`🗨️ 🗨️ 🗨️ Looks like we've got a matching Array! 🗯️ 🗯️ 🗯️`);
-    if(!sameLength) console.log(`💤 💤 💤 This isn't a matching  a matching Array! 💤 💤 💤`);
+  if(array1.length !== array2.length) return false; 
+
+  
+  for(let x = 0 ; x < array1.length ; x++) {
+    if(array1[x] !== array2[x]) return false;
+    
   }
+  return true;  
 };
+
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected ? console.log(`✅✅✅ Assertion Passed: [${actual}] === [${expected}]`) : console.log(`😈😈😈 Assertion Failed: [${actual}] !== [${expected}]`));
+  
+// };
+
+// console.log(eqArrays([1, 2, 3], [1, 2])); // => false
+// console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
+// console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
+
+// console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
+// console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
+
+
+// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+
+module.exports = eqArrays;
+
+// (eqArrays([5,6,7], [5,6,5]));
+// (eqArrays(["Yo Yo", "Lighthouse", "Labs"],["Yo Yo", "Lighthouse", "Labs"]));
+// (eqArrays(["Tania", "Adele", "Ellie", "Daisy"], ["Tania", "Adele", "Ellie"]));
+// (eqArrays(["carlito"], ["carlito"]));
+

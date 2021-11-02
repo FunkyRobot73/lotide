@@ -1,8 +1,8 @@
 const assertEqual = require('./assertEqual');
 
 const tail = function(array) {
-  array = array[array.length -1];
-  return array;
+  result = array[array.length -1];
+  return result;
 }
 // TEST CODE
 // console.log(tail([5,6,7]));
