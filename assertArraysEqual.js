@@ -1,31 +1,26 @@
 const eqArrays = function(array1, array2) {
-  sameLength = true;
-    if(array1.length === array2.length) {
-      console.log(`\nBoth Arrays are of equal length. (AKA :${sameLength})`)
-    } else {
-      sameLength = false;
-      console.log(`\nThese Arrays [${array1}] & [${array2}] are different sizes. (AKA:${sameLength})`)
-  }
-    if(sameLength) {
-    for(x = 0 ; x < array1.length ; x++) {
-      console.log(`Does ${array1[x]} === ${array2[x]}❔❔❔`);
-      if(array1[x] !== array2[x]) {
-        sameLength = false;
-        console.log(`🚩🚩🚩Unfortunately this #${array1[x]} Doesn't match this #${array2[x]}!!! (AKA: ${sameLength})`);
-        
-      }
-      if(sameLength) console.log(`😁Looks like we've got a matching pair!`);
-      }
-      if(sameLength) console.log(`🗨️ 🗨️ 🗨️ Looks like we've got a matching Array! 🗯️ 🗯️ 🗯️`);
-      if(!sameLength) console.log(`💤 💤 💤 This isn't a matching  a matching Array! 💤 💤 💤`);
-    }
-
-  };
+  if(array1.length !== array2.length) return false; 
+// THIS COMPARES ARRAY1 to ARRAY2 ****
   
-const assertArraysEqual = function() {
- eqArrays([1,2,3], [1,2,3]);
- 
+  for(let x = 0 ; x < array1.length ; x++) {
+    if(array1[x] !== array2[x]) return false;
+    
+  }
+  return true;  
+};
+  
+const assertArraysEqual = function(array1, array2) {
+  if(eqArrays(array1, array2) === true)
+  {console.log(`✅✅✅ Assertion Passed`)}
+  else
+  {console.log(`❌❌❌ Assertion Failed`)};
+
+  // if(eqArrays) console.log(`✅✅✅ Assertion Passed`)
+  // if (!eqArrays) console.log(`❌❌❌ Assertion Failed`)
 }
 
+// assertArraysEqual([1, 2, 3], [1, 2, 3]);
+// assertArraysEqual([1, 2, 3], [1, 2, 3]);
 
-assertArraysEqual();
+module.exports = eqArrays;
+module.exports = assertArraysEqual;
